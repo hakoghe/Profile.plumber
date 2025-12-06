@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Plumber – Plumbing & Heating Portfolio</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <a href="#home" class="logo-container" aria-label="Home">
+      <div class="logo" aria-hidden="false">
+        <!-- Water drop SVG logo -->
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc" width="60" height="60">
+          <title id="logoTitle">Plumber</title>
+          <desc id="logoDesc">Stylized water drop with gradient, representing plumbing and heating services.</desc>
+          <defs>
+            <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#6dd5fa" stop-opacity="1"/>
+              <stop offset="100%" stop-color="#2980b9" stop-opacity="1"/>
+            </linearGradient>
+            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="2.2" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+
+          <circle cx="50" cy="50" r="45" fill="none" stroke="url(#waterGrad)" stroke-width="1.5" opacity="0.35"/>
+          <path d="M50 12 C36 30, 18 44, 30 66 C38 80, 62 88, 70 66 C82 44, 64 30, 50 12 Z"
+                fill="url(#waterGrad)" stroke="#1f78a6" stroke-width="0.8" filter="url(#glow)"/>
+          <path d="M44 22 C41 30, 34 40, 38 50 C41 58, 47 62, 50 60 C48 50, 50 36, 44 22 Z"
+                fill="rgba(255,255,255,0.25)" />
+        </svg>
+      </div>
+
+      <div class="logo-text">
+        <div class="brand-name">Plumber</div>
+        <div class="tagline">Plumbing & Heating Solutions</div>
+      </div>
+    </a>
+
+    <nav class="main-menu" id="mainMenu">
+      <a href="#home" class="menu-item active">Home</a>
+      <a href="#about" class="menu-item">About</a>
+      <a href="#contact" class="menu-item">Contact</a>
+      <a href="#projects" class="menu-item">Projects</a>
+      
+    </nav>
+
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="section">
+    <div class="coverflow-wrapper">
+      <div class="info">
+        <h2 id="current-title">Ital Evant Technical Services</h2>
+        <p id="current-description">Delivering professional plumbing solutions with expertise in installation, diagnostics, and system maintenance.</p>
+
+      </div>
+
+      <div class="coverflow-container" tabindex="0">
+        <div class="coverflow" id="coverflow">
+          <!-- Replace the images below with your plumbing project photos -->
+          <div class="coverflow-item" data-index="0">
+            <div class="cover image-loading">
+              <img src="images/Ital.jpg" alt="Kitchen Repipe" loading="lazy">
+            </div>
+            <div class="reflection"></div>
+          </div>
+
+          <div class="coverflow-item" data-index="1">
+            <div class="cover image-loading">
+              <img src="images/Project 1.jpg" alt="Water Heater Installation" loading="lazy">
+            </div>
+            <div class="reflection"></div>
+          </div>
+
+          <div class="coverflow-item" data-index="2">
+            <div class="cover image-loading">
+              <img src="images/project 2.jpg" alt="Bathroom Renovation Plumbing" loading="lazy">
+            </div>
+            <div class="reflection"></div>
+          </div>
+
+          <div class="coverflow-item" data-index="3">
+            <div class="cover image-loading">
+              <img src="images/PVC.jpg" alt="Drain Cleaning & Repair" loading="lazy">
+            </div>
+            <div class="reflection"></div>
+          </div>
+
+          <div class="coverflow-item" data-index="4">
+            <div class="cover image-loading">
+              <img src="images/project 4 copy.jpg" alt="Commercial Kitchen Plumbing" loading="lazy">
+            </div>
+            <div class="reflection"></div>
+          </div>
+
+          <div class="coverflow-item" data-index="5">
+            <div class="cover image-loading">
+              <img src="images/project 5.jpg" alt="Boiler & Heating Maintenance" loading="lazy">
+            </div>
+            <div class="reflection"></div>
+          </div>
+
+          <div class="coverflow-item" data-index="6">
+            <div class="cover image-loading">
+              <img src="images/project 6.jpg" alt="Pipe Repair" loading="lazy">
+            </div>
+            <div class="reflection"></div>
+          </div>
+        </div>
+
+        <button class="nav-button prev" onclick="navigate(-1)">‹</button>
+        <button class="nav-button next" onclick="navigate(1)">›</button>
+
+        <div class="dots-container" id="dots"></div>
+
+        <button class="play-pause-button" id="playPauseBtn" onclick="toggleAutoplay()">
+          <span class="play-icon">▶</span>
+          <span class="pause-icon" style="display: none;">❚❚</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Services Section -->
+  <section id="about" class="section">
+    <div class="about-content">
+      <div class="about-header">
+        <h2>About Me</h2>
+        <p>Professional plumbing and heating services delivering reliable installations, fast repairs, and preventive maintenance for homes and businesses.</p>
+      </div>
+
+      <div class="about-main">
+        <div class="about-visual">
+          <div class="showcase-display">
+            <div class="showcase-main">
+              <div class="showcase-logo">
+                <!-- smaller white logo for showcase -->
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M50 12 C36 30, 18 44, 30 66 C38 80, 62 88, 70 66 C82 44, 64 30, 50 12 Z"
+                        fill="white" opacity="0.95"/>
+                </svg>
+              </div>
+
+              <h3 class="showcase-title">Trusted Plumbing Work</h3>
+              <p class="showcase-subtitle">From emergency repairs to full installations — quality workmanship and fair pricing</p>
+
+              <div class="showcase-badges">
+                <span class="badge">Installation</span>
+                <span class="badge">Heating</span>
+                <span class="badge">Repairs</span>
+                <span class="badge">Maintenance</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-info">
+          <h3>What We Do</h3>
+          <p>We provide comprehensive plumbing and heating services: new installations, water heater & boiler work, repiping, drain & sewer cleaning, leak detection, and preventive maintenance. Licensed, insured, and committed to customer satisfaction.</p>
+
+          <ul class="feature-list">
+            <li>Emergency repairs and fast response</li>
+            <li>Residential & commercial plumbing</li>
+            <li>Water heater (tank & tankless) installation & service</li>
+            <li>Greywater, drainage, and backflow prevention</li>
+            <li>Transparent estimates and reliable guarantees</li>
+          </ul>
+         
+        </div>
+      </div>
+
+      <div class="stats-section">
+        <div class="stat-item">
+          <div class="stat-number">>500</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">8+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4.9/5</div>
+          <div class="stat-label">Average Review</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Emergency Support</div>
+        </div>
+        
+      </div>
+    
+  </section>
+  <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="contact-content">
+            <div class="contact-header">
+                <h2>Get In Touch</h2>
+                
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info-section">
+                    <h3>Let's Connect</h3>
+                    
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>atmaneghebouli@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                       
+                    
+                    
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+ 
+ <!-- Projects Section (Videos from local folder "vedio") -->
+<section id="projects" class="section">
+  <div class="projects-content">
+    <h2>Selected Projects </h2>
+
+    <div class="project-videos-grid">
+      <!-- Video item 1 -->
+      <div class="project-video-item">
+        <button class="video-thumb" data-type="local" data-src="vedio/1.mp4" aria-label="Play Kitchen Re-pipe video">
+          <img src="images/Bathroom (1).jpg" alt="Kitchen Re-pipe thumbnail">
+          <div class="play-overlay">▶</div>
+        </button>
+        <h4>Complete Bathroom Installation</h4>
+        <p>Complete Bathroom Installation</p>
+        
+      </div>
+
+      <!-- Video item 2 -->
+      <div class="project-video-item">
+        <button class="video-thumb" data-type="local" data-src="vedio/2.mp4" aria-label="Play Water Heater Installation video">
+          <img src="images/project 4.jpg" alt="Water Heater thumbnail">
+          <div class="play-overlay">▶</div>
+        </button>
+        <h4>Water Heater Installation</h4>
+        <p>Water Heater Installation</p>
+        
+      </div>
+
+      <!-- Video item 3 -->
+      <div class="project-video-item">
+        <button class="video-thumb" data-type="local" data-src="vedio/3.mp4" aria-label="Play Commercial Kitchen Plumbing video">
+          <img src="images/Bath 2 (1).jpg" alt="Commercial Kitchen thumbnail">
+          <div class="play-overlay">▶</div>
+        </button>
+        <h4>Complete Bathroom Installation</h4>
+        <p>Complete Bathroom Installation 2</p>
+        
+      </div>
+
+     <!-- Video item 3 -->
+
+    </div>
+  </div>
+
+  <!-- Video Modal (keep this in the page, once) -->
+  <div id="videoModal" class="video-modal" aria-hidden="true" role="dialog" aria-label="Project video player">
+    <button class="modal-close" id="modalClose" aria-label="Close video">✕</button>
+
+    <div class="modal-video-wrapper">
+      <video id="modalVideo" controls playsinline></video>
+      <div id="youtubeWrapper" class="youtube-wrapper" aria-hidden="true">
+        <iframe id="youtubeIframe" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen title="YouTube video"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-copyright">
+        © 2025 PLUMBER
+      </div>
+      <div class="footer-links">
+        <a href="#privacy" onclick="event.preventDefault(); alert('Privacy Policy page would go here');">Privacy Policy</a>
+        <a href="#terms" onclick="event.preventDefault(); alert('Terms of Service page would go here');">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top button -->
+  <div class="scroll-to-top" id="scrollToTop"><span>↑</span></div>
+
+  <script src="plumber.js"></script>
+</body>
+</html>
